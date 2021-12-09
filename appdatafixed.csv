@@ -1,0 +1,5 @@
+"steam_appid";"timestamp_created";"timestamp_updated";"voted_up";"votes_up";"votes_funny";"weighted_vote_score";"comment_count"
+
+INSERT INTO artists (name)
+VALUES('Bud Powell');
+

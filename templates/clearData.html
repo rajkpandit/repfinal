@@ -1,0 +1,65 @@
+[[extend 'layout.html']]
+
+
+<div class="container">
+
+
+    <h1 class="subtitle">Active Users</h1>
+
+
+    <table class="table is-striped is-fullwidth">
+        <tr>
+          <th>Name</th>
+          <th>Status:</th>
+        </tr>
+        [[for row in listBannedActive:]]
+        <tr>
+          <td>[[=row[0] ]]</td>
+          <td>[[=row[1] ]]</td>
+          
+        </tr>
+        [[pass]]
+      </table>
+    
+  </div>
+  <h1 class="subtitle">Top Rated Games</h1>
+
+    <table class="table is-striped is-fullwidth">
+      <tr>
+        <th>Rating</th>
+        <th>Game Name:</th>
+      </tr>
+      [[for row in topGames:]]
+      <tr>
+        <td>[[=row[1] ]]</td>
+        <td>[[=row[0] ]]</td>
+        
+      </tr>
+      [[pass]]
+    </table>
+  
+</div>
+
+<div class="container">
+
+    <h1 class="subtitle">Top Reviews for Games</h1>
+   
+    <table class="table is-striped is-fullwidth">
+      <tr>
+        <th>Name of Game</th>
+        <th>Voted up by # Users</th>
+        <th>Weigheted Overall Score for Game</th>
+
+      </tr>
+      [[for row in bestGames:]]
+      <tr>
+        <td>[[=row[11] ]]</td>
+        <td>[[=row[0] ]]</td>
+        <td>[[=row[7] ]]</td>
+        
+      </tr>
+      [[pass]]
+    </table>
+  
+</div>
+

@@ -1,0 +1,76 @@
+[[extend 'layout.html']]
+<div class="section">
+
+	<h1 class="title">Game Popularity for [[=name]]</h1>
+
+<body>
+	<div class="chart">
+		<canvas id="myChart" width="400" height="200"></canvas>
+	</div>
+	<i >The Current Number of Players/Owners of [[=name]] :</i>
+	<p id="value">[[=ownercount[0][0]]]</p>
+
+
+
+<p> User Actions:	<a href="[[=URL('leaveReview/',id)]]"><button>Leave a Review for [[=name]]</button></a> 
+	<a href="[[=URL('updatebyid/',id)]]"><button>Update Number of Owners (crowdsourced)</button></a></p>
+
+<p><b><i> Global Actions:	<a href="[[=URL('clearData/',id)]]"><button>View Active Users Status, and Hot Games data for [[=name]] &  More! </button></i></b></a> 
+
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+	
+	
+	
+	
+	<!--  Offline support, add mobile support later -->
+
+	<script src="../static/js/chart.js"></script>	
+	<script src="../static/js/graph.js"></script>
+</body>
+
+
+<h1 class="subtitle">Reviews By Users</h1>
+<div class="container">
+
+   
+    <table class="table is-striped is-fullwidth">
+      <tr>
+        <th>Name of User</th>
+        <th>Their Review</th>
+      </tr>
+      [[for row in rows:]]
+      <tr>
+        <td>[[=row[1] ]]</td>
+        <td>[[=row[0] ]]</td>
+        
+      </tr>
+      [[pass]]
+    </table>
+  
+</div>
+
+
+<h1 class="subtitle">Scores from Metacritic</h1>
+<table class="table is-striped is-fullwidth">
+	<tr>
+	  <th>Metacritic Score</th>
+	  <th>Overall Reccomendation Count (User and Critic Based)</th>
+	</tr>
+	[[for row in rows2:]]
+	<tr>
+	  <td>[[=row[0] ]]</td>
+	  <td>[[=row[1] ]]</td>
+	  
+	</tr>
+	[[pass]]
+  </table>
+
+</div>
+
+</html>
+</div>
